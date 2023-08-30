@@ -21,6 +21,7 @@ async def send_welcome(message: types.Message, state=FSMContext):
         await bot.send_sticker(message.chat.id, sticker=sticker[0])
         await bot.send_message(message.chat.id, f'Здравствуйте, {message.from_user.first_name}! '
                                                 f'Я здесь что бы помочь вам с вашей задачей. 🐱🤖')
+        await bot.send_message(message.chat.id, message.chat.id)
         await create_main_bottom(message)
     except:
         pass
